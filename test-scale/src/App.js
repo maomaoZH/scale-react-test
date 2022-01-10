@@ -3,24 +3,26 @@ import React from "react";
 import "./App.css";
 
 function App() {
+  const handleClick = () => {
+    console.log("handle click");
+  };
   return (
-    <div className="App">
-      <a href={"/"}>Startseite</a> <a href="/a">A</a> <a href={`/a/b`}>B</a>
-      <scale-breadcrumb>
-        <a href={"/"}>Startseite</a> <a href="/#a">A</a> <a href={`/#a/b`}>B</a>
-      </scale-breadcrumb>
-      <scale-breadcrumb separator="---">
-        <a href="#1">First link</a>
-        <a href="#2">Second link</a>
-        <a href="#3">Third link</a>
-      </scale-breadcrumb>
-      {/* <Routes>
-        <Route path="/a/b/c" children={() => <p>A B C</p>} />
-        <Route path="/a/b" children={() => <p>A B</p>} />
-        <Route path="/a" children={() => <p>A</p>} />
-        <Route path="/" children={() => <p>Startseite</p>} />
-      </Routes> */}
-    </div>
+    <scale-app-shell>
+      <scale-app-header slot="header"></scale-app-header>
+      <div>
+        <a href={"/"}>Startseite</a> <a href="/a">A</a> <a href={`/a/b`}>B</a>
+        <scale-breadcrumb>
+          <a href={"/#a"}>A</a> <a href="/#b">B</a>{" "}
+          <a href={`/#a/b`}>A and B</a>
+        </scale-breadcrumb>
+        <scale-breadcrumb separator="---">
+          <span onClick={handleClick}>First link</span>
+          <span onClick={handleClick}>Second link</span>
+          <span onClick={handleClick}>Third link</span>
+        </scale-breadcrumb>
+      </div>
+      <scale-app-footer slot="footer"></scale-app-footer>
+    </scale-app-shell>
   );
 }
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+  />
+  <script
+    type="module"
+    src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+  ></script>
+  <title>This is a plain html page</title>
+  <body>
+    <scale-app-shell>
+      <scale-app-header slot="header"></scale-app-header>
+      <main>
+        <div style="max-width: 300px">
+          <div style="max-width: 200px">
+            <scale-card to="https://example.com" target="_blank">
+              <div style="margin: -24px">
+                <img
+                  style="margin-bottom: -4px; width: 100%"
+                  src="https://via.placeholder.com/150"
+                  alt="placeholder"
+                />
+                <div style="padding: 24px">A card with a full width image</div>
+              </div>
+            </scale-card>
+          </div>
+        </div>
+        <scale-date-picker
+          helperText="Make sure to fill this"
+          label="Helper Text"
+          value="2020-12-31"
+        ></scale-date-picker>
+      </main>
+      <scale-app-footer slot="footer"></scale-app-footer>
+    </scale-app-shell>
+  </body>
+</html>
